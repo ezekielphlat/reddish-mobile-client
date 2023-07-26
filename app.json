@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "reddish-mobile-client",
+    "slug": "reddish-mobile-client"
+  }
+}
