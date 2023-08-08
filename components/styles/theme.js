@@ -11,5 +11,12 @@ const lightTheme = {
     secondary: "#4C4C4C",
     background: "#fff",
   },
+  fonts: {
+    extraBold: "NunitoSansExtraBold",
+    bold: "NunitoSansBold",
+    medium: "NunitoSansMedium",
+    regular: "NunitoSansRegular",
+    light: "NunitoSansLight",
+  },
 };
 export { lightTheme, darkTheme };

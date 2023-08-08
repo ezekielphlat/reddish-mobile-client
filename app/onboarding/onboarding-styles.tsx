@@ -5,7 +5,8 @@ export const Header = styled.View`
   margin-top: 10%;
 `;
 export const MainBody = styled.View`
-  margin-top: 15%;
+  padding: 0 32px;
+  /* margin-top: 15%; */
 `;
 export const CaptionWrapper = styled.View`
   margin-top: 20px;
@@ -21,10 +22,16 @@ export const SpotWrapper = styled.View`
   align-items: center;
 `;
 export const Footer = styled.View`
+  /* position: absolute;
   width: 100%;
+  align-self: flex-end; */
+  bottom: 10px;
+  padding: 0 32px;
   flex-direction: row;
   justify-content: space-between;
-
   align-items: center;
-  margin-top: 30%;
+  width: 100%;
+
+  /* border: 1px solid red; */
+  /* margin-top: 30%; */
 `;

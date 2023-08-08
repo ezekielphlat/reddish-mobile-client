@@ -1,7 +1,7 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Platform } from "react-native";
 import styled from "styled-components/native";
 import React from "react";
-import { Images } from "../../constants";
+import { Images, Styles } from "../../constants";
 import { MainContainer, StyledText } from "../../components/styles";
 import { Stack } from "expo-router";
 import SpotHighlight from "../../components/utilities/SpotHighlight";
@@ -14,25 +14,7 @@ import {
   MainBody,
   SpotWrapper,
 } from "./onboarding-styles";
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 50,
-  },
-  tinyLogo: {
-    width: 50,
-    height: 50,
-  },
-  logo: {
-    width: 136,
-    height: 39,
-    flexShrink: 0,
-  },
-  welcome: {
-    width: 300,
-    height: 300,
-    flexShrink: 0,
-  },
-});
+import { CaretRight } from "phosphor-react-native";
 
 const Welcome = () => {
   const router = useRouter();
@@ -45,17 +27,19 @@ const Welcome = () => {
       <Stack.Screen
         options={{
           headerTitle: "",
-          headerStyle: { backgroundColor: "#f5f5f5" },
+          headerStyle: { backgroundColor: "#fff" },
           headerShadowVisible: false,
-          headerLeft: () => "",
+          headerBackVisible: false,
+          headerLeft: () => null,
           headerShown: false,
+          orientation: "portrait",
         }}
       />
       <Header>
-        <Image source={Images.logo} resizeMode="contain" style={styles.logo} />
+        <Image source={Images.logo} resizeMode="contain" style={Styles.logo} />
       </Header>
       <MainBody>
-        <Images.WelcomeIllustration style={styles.welcome} />
+        <Images.WelcomeIllustration style={Styles.welcome} />
         <CaptionWrapper>
           <StyledText fontSize="22px">Welcome</StyledText>
           <StyledText light centered fontSize="18px">
@@ -68,9 +52,14 @@ const Welcome = () => {
       </MainBody>
 
       <Footer>
-        <TextButton>Skip</TextButton>
-        <Button handlePress={() => router.push("/onboarding/personalize")}>
-          CONTINUE
+        <TextButton handlePress={() => router.replace("/auth/getting-started")}>
+          Skip
+        </TextButton>
+        <Button
+          type="rounded"
+          handlePress={() => router.replace("/onboarding/personalize")}
+        >
+          <CaretRight size={32} color="#f7f7f7" />
         </Button>
       </Footer>
     </MainContainer>
