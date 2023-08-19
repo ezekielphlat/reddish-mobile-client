@@ -121,7 +121,7 @@ const GettingStarted = () => {
 
           <Footer>
             <Button
-              variant="large"
+              size="large"
               handlePress={() => router.replace("/auth/otp")}
             >
               GET STARTED

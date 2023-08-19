@@ -6,6 +6,7 @@ type ButtonStyleProps = {
   children?: any;
   variant?: string;
   type?: string;
+  size?: string;
 };
 const Container = styled.TouchableOpacity<any>`
   justify-content: center;
@@ -15,6 +16,13 @@ const Container = styled.TouchableOpacity<any>`
   height: 50px;
   padding: 6px 16px;
   border-radius: 12px;
+  ${(props) =>
+    props.variant === "inverse" &&
+    css`
+      background-color: white;
+      padding: 10px 10px;
+      height: 56px;
+    `}
   ${(props) =>
     props.type === "rounded" &&
     css`
@@ -38,9 +46,15 @@ const ButtonText = styled.Text`
   font-weight: 600;
 `;
 
-const Button = ({ children, handlePress, variant, type }: ButtonStyleProps) => {
+const Button = ({
+  children,
+  handlePress,
+  variant,
+  size,
+  type,
+}: ButtonStyleProps) => {
   return (
-    <Container type={type} size={variant} onPress={handlePress}>
+    <Container type={type} size={size} variant={variant} onPress={handlePress}>
       <ButtonText>{children}</ButtonText>
     </Container>
   );

@@ -4,8 +4,15 @@ import { ThemeProvider } from "styled-components/native";
 import { darkTheme, lightTheme } from "./styles/theme";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+type ThemedComponentProps = {
+  children: any;
+  withStatusBar?: boolean;
+};
 
-const ThemedComponent = ({ children }: any) => {
+const ThemedComponent = ({
+  children,
+  withStatusBar = true,
+}: ThemedComponentProps) => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
   const getTheme = async () => {
     try {
@@ -27,7 +34,9 @@ const ThemedComponent = ({ children }: any) => {
   return (
     <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
       {children}
-      <ExpoStatusBar style="dark" backgroundColor="#ffd9cc" />
+      {withStatusBar && (
+        <ExpoStatusBar style="dark" backgroundColor="#ffd9cc" />
+      )}
     </ThemeProvider>
   );
 };

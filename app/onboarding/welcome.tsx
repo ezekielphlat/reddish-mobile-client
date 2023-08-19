@@ -52,12 +52,12 @@ const Welcome = () => {
       </MainBody>
 
       <Footer>
-        <TextButton handlePress={() => router.replace("/auth/getting-started")}>
+        <TextButton handlePress={() => router.replace("/home")}>
           Skip
         </TextButton>
         <Button
           type="rounded"
-          handlePress={() => router.replace("/onboarding/personalize")}
+          handlePress={() => router.replace("/home/personalize")}
         >
           <CaretRight size={32} color="#f7f7f7" />
         </Button>
