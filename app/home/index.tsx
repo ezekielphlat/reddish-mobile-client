@@ -80,7 +80,7 @@ const Home = () => {
               <SearchWrapper>
                 <SearchInput />
                 <Button variant="inverse">
-                  <SlidersHorizontal size={32} weight="fill" color="#FF4300" />
+                  <SlidersHorizontal size={32} weight="fill" color="#FF703D" />
                 </Button>
               </SearchWrapper>
 

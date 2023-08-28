@@ -57,7 +57,7 @@ const Welcome = () => {
         </TextButton>
         <Button
           type="rounded"
-          handlePress={() => router.replace("/home/personalize")}
+          handlePress={() => router.replace("/onboarding/personalize")}
         >
           <CaretRight size={32} color="#f7f7f7" />
         </Button>
